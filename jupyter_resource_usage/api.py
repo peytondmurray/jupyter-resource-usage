@@ -21,7 +21,7 @@ except ImportError:
     IPYKERNEL_VERSION = None
 
 
-class ApiHandler(APIHandler):
+class JRUApiHandler(APIHandler):
     executor = ThreadPoolExecutor(max_workers=5)
 
     @web.authenticated
@@ -90,7 +90,7 @@ class ApiHandler(APIHandler):
         return sum([get_cpu_percent(p) for p in all_processes])
 
 
-class KernelUsageHandler(APIHandler):
+class KernelUsageHandler(JRUApiHandler):
     @web.authenticated
     async def get(self, matched_part=None, *args, **kwargs):
         if not USAGE_IS_SUPPORTED:

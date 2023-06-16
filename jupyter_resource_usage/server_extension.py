@@ -1,7 +1,7 @@
 from jupyter_server.utils import url_path_join
 from tornado import ioloop
 
-from jupyter_resource_usage.api import ApiHandler
+from jupyter_resource_usage.api import JRUApiHandler
 from jupyter_resource_usage.api import KernelUsageHandler
 from jupyter_resource_usage.config import ResourceUseDisplay
 from jupyter_resource_usage.metrics import PSUtilMetricsLoader
@@ -17,7 +17,7 @@ def load_jupyter_server_extension(server_app):
     base_url = server_app.web_app.settings["base_url"]
 
     server_app.web_app.add_handlers(
-        ".*", [(url_path_join(base_url, "/api/metrics/v1"), ApiHandler)]
+        ".*", [(url_path_join(base_url, "/api/metrics/v1"), JRUApiHandler)]
     )
     server_app.web_app.add_handlers(
         ".*$",
