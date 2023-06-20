@@ -7,9 +7,9 @@ node_modules/
 *.egg-info/
 .ipynb_checkpoints
 *.tsbuildinfo
-jupyter_server_resource_usage/labextension
+jupyter_resource_usage/labextension
 # Version file is handled by hatchling
-jupyter_server_resource_usage/_version.py
+jupyter_resource_usage/_version.py
 
 # Created by https://www.gitignore.io/api/python
 # Edit at https://www.gitignore.io/?templates=python

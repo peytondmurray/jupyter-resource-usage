@@ -107,6 +107,6 @@
       }
     },
     "extension": true,
-    "outputDir": "."
+    "outputDir": "../../jupyter_resource_usage/labextension"
   }
 }
